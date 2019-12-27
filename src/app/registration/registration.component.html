@@ -1,1 +1,128 @@
-<p>registration works!</p>
+<div class="container-fluid" style="background-color: whitesmoke;height: 100vh;">
+    <div class="row">
+        <div class="col-sm-3">
+        </div>
+        <div class="col-md-6">
+            <div class="card card-primary">
+                <div class="card-header">
+                    <h3 class="card-title">Add User</h3>
+                </div>
+                <form [formGroup]="adduserform" (ngSubmit)="onSubmit()" style="font-size:15px ;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="firstname">FirstName</label>
+                                    <input type="text" class="form-control" formControlName="firstname"
+                                        placeholder="Enter first name">
+                                    <div *ngIf="adduserform.controls['firstname'].invalid && (adduserform.controls['firstname'].dirty || adduserform.controls['firstname'].touched)"
+                                        class="alert alert-danger">
+                                        <div *ngIf="adduserform.controls['firstname'].errors.required"
+                                            style="font-size: 10px;">
+                                            First name is required.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="middlename">MiddleName</label>
+                                    <input type="text" class="form-control" formControlName="middlename"
+                                        placeholder="Enter Middlename">
+                                    <div *ngIf="adduserform.controls['middlename'].invalid && (adduserform.controls['middlename'].dirty || adduserform.controls['middlename'].touched)"
+                                        class="alert alert-danger">
+                                        <div *ngIf="adduserform.controls['middlename'].errors.required"
+                                            style="font-size: 10px;">
+                                            Middlename is required.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="lastname">LastName</label>
+                                    <input type="text" class="form-control" formControlName="lastname"
+                                        placeholder="Enter lastname">
+                                    <div *ngIf="adduserform.controls['lastname'].invalid && (adduserform.controls['lastname'].dirty || adduserform.controls['lastname'].touched)"
+                                        class="alert alert-danger">
+                                        <div *ngIf="adduserform.controls['lastname'].errors.required"
+                                            style="font-size: 10px;">
+                                            Lastname is required.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Email Address</label>
+                            <input type="text" placeholder="Email" formControlName="emailId" class="form-control" />
+                            <div *ngIf="adduserform.controls['emailId'].invalid && (adduserform.controls['emailId'].dirty || adduserform.controls['emailId'].touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="adduserform.controls['emailId'].errors.required" style="font-size: 10px;">
+                                    Email is required.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="mobile">Mobile</label>
+                                    <input type="number" class="form-control" formControlName="mobile"
+                                        placeholder="Mobile">
+                                    <div *ngIf="adduserform.controls['mobile'].invalid && (adduserform.controls['mobile'].dirty || adduserform.controls['mobile'].touched)"
+                                        class="alert alert-danger">
+                                        <div *ngIf="adduserform.controls['mobile'].errors.required"
+                                            style="font-size: 10px;">
+                                            Mobilenumber is required.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="password">password</label>
+                                    <input type="password" class="form-control" formControlName="password"
+                                        placeholder="password">
+                                    <div *ngIf="adduserform.controls['password'].invalid && (adduserform.controls['password'].dirty || adduserform.controls['password'].touched)"
+                                        class="alert alert-danger">
+                                        <div *ngIf="adduserform.controls['password'].errors.required"
+                                            style="font-size: 10px;">
+                                            password is required.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="confirmpassword">Confirm Password</label>
+                                    <input type="confirmpassword" class="form-control" formControlName="confirmPassword"
+                                        placeholder="confirmpassword">
+                                    <div *ngIf="adduserform.controls['confirmpassword'].invalid && (adduserform.controls['confirmpassword'].dirty || adduserform.controls['confirmpassword'].touched)"
+                                        class="alert alert-danger">
+                                        <div *ngIf="adduserform.controls['confirmpassword'].errors.required"
+                                            style="font-size: 10px;">
+                                            confirmpassword is required.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-success" style="width:100px"(click)="login()">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-3">
+        </div>
+    </div>
+</div>
